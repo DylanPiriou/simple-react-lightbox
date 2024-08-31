@@ -1,11 +1,12 @@
 {
-	"name": "simple-react-lightbox",
-	"version": "1.0.0",
+	"name": "minimalist-react-lightbox",
+	"version": "1.0.6",
 	"description": "A simple component to add lightbox with TailwindCSS in React.",
 	"main": "index.js",
 	"scripts": {
 		"clean": "rm -rf dist",
-		"build": "yarn clean && tsc && cp package.json README.md ./dist"
+		"build:css": "postcss src/index.css -o dist/index.css",
+		"build": "yarn clean && yarn build:css && tsc && cp package.json README.md ./dist"
 	},
 	"repository": {
 		"type": "git",
@@ -28,13 +29,10 @@
 		"@types/react-dom": "^18.0.6",
 		"@types/react-transition-group": "^4.4.5",
 		"autoprefixer": "^10.4.20",
-		"postcss": "^8.4.41",
+		"postcss-cli": "^11.0.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"tailwindcss": "^3.4.10",
 		"typescript": "^4.3.5"
-	},
-	"dependencies": {
-		"lucide-react": "^0.437.0"
 	}
 }
